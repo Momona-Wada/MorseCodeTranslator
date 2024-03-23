@@ -15,7 +15,8 @@
 
 #define DOT_TIME 200 // ms
 #define DASH_TIME 600 // ms
-#define BLANK_TIME 200 // ms
+#define BLANK_BETWEEN_SYMBOL 200 // ms
+#define BLANK_BETWEEN_CHARACTER 600 // ms
 #define FREQUENCY 700
 
 void dot() {
@@ -47,8 +48,11 @@ int main() {
                 dot();
                 i++;
             }
+        } else if (text[i+1] == '0') {
+            SLEEP(BLANK_BETWEEN_CHARACTER);
+            i += 3;
         } else {
-            SLEEP(BLANK_TIME);
+            SLEEP(BLANK_BETWEEN_SYMBOL);
             i++;
         }
     }
