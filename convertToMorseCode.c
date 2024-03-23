@@ -6,8 +6,10 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX_MORSE_LENGTH 1024
+
 // table for morse code
-const char* morse_table[36] = {
+const char* morseTable[36] = {
         "10111", "111010101", "11101011101", "1110101", "1", "101011101", "111011101",
         "1010101", "101", "1011101110111", "111010111", "101110101", "1110111", "11101",
         "11101110111", "10111011101", "1110111010111", "1011101", "10101", "111",
@@ -17,32 +19,53 @@ const char* morse_table[36] = {
 };
 
 // get corresponding morse code based on character
-const char* get_morse_code(char c) {
+const char* getMorseCode(char c) {
     if (c >= 'A' && c <= 'Z') {
-        return morse_table[c - 'A'];
+        return morseTable[c - 'A'];
     } else if (c >= '0' && c <= '9') {
-        return morse_table[c - '0' + 26];
+        return morseTable[c - '0' + 26];
     }
     return ""; // return empty for characters not in the table
 }
 
 // convert given text into morse code
-void print_morse(const char* text) {
+void storeMorseCode(const char* text, char* morseResult) {
+    int index = 0;  // return
     int len = strlen(text);
+
     for (int i = 0; i < len; i++) {
+        const char* morseChar;
+
+        // retrieve next morse character
         if (text[i] != ' ') {
-            printf("%s000", get_morse_code(text[i]));
+            morseChar = getMorseCode(text[i]);
         } else {
-            printf("0000000"); // between words
+            morseChar = "0000000"; // add seven between
+        }
+
+        // add morseChar
+        while (*morseChar && index < MAX_MORSE_LENGTH - 1) {
+            morseResult[index++] = *morseChar++;
+        }
+
+        // add space between character
+        if (text[i] != ' ' && index < MAX_MORSE_LENGTH - 4) {
+            strcpy(&morseResult[index], "000");
+            index += 3;
         }
     }
+    // add '\0'
+    morseResult[index] = '\0';
 }
 
 int main() {
     char text[] = "HELLO WORLD"; // text to convert
+    char morseResult[MAX_MORSE_LENGTH]; // pointer to store converted result
+
     printf("The given text is:\n%s\n\n", text);
-    printf("The corresponding morse code is:\n");
-    print_morse(text);
+
+    storeMorseCode(text, morseResult);
+    printf("The corresponding morse code is:\n%s", morseResult);
     printf("\n");
     return 0;
 }
