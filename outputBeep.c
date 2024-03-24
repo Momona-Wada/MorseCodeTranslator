@@ -2,9 +2,6 @@
 // Created by Tatsunori Marumo on 3/23/2024.
 //
 
-#include <stdio.h>
-#include <stdlib.h>
-
 #if defined(_WIN64)
 #include <windows.h>
 #define PLAY_SOUND(file) Beep(FREQUENCY, file == "sound/dot.mov" ? DOT_TIME : DASH_TIME)
@@ -29,7 +26,7 @@ void dash() {
     PLAY_SOUND("sound/dash.mov");
 }
 
-int main() {
+void outputBeep() {
     char text[] = "101010001110001110111010111";
     int i = 0;
 
@@ -50,5 +47,4 @@ int main() {
             i++;
         }
     }
-    return 0;
 }
