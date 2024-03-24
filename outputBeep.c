@@ -1,5 +1,5 @@
 //
-// Created by tmaru on 3/23/2024.
+// Created by Tatsunori Marumo on 3/23/2024.
 //
 
 #include <stdio.h>
@@ -35,16 +35,16 @@ int main() {
 
     while (text[i] != '\0') {
         if (text[i] == '1') {
-            if (text[i+1] == '1') {
+            if (text[i+1] == '1') { // Check if the input is 111
                 dash();
-                i += 3;
+                i += 3; // move pointer by three
             } else {
                 dot();
                 i++;
             }
-        } else if (text[i+1] == '0') {
+        } else if (text[i+1] == '0') { // check if the input is 000
             SLEEP(BLANK_BETWEEN_CHARACTER);
-            i += 3;
+            i += 3; // move pointer by three
         } else {
             SLEEP(BLANK_BETWEEN_SYMBOL);
             i++;
