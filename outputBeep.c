@@ -48,3 +48,8 @@ void outputBeep() {
         }
     }
 }
+
+int main() {
+    outputBeep();
+    return 0;
+}
