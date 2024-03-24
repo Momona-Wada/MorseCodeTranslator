@@ -7,11 +7,11 @@
 
 #if defined(_WIN64)
 #include <windows.h>
-#define PLAY_SOUND(file) Beep(FREQUENCY, file == "dot.wav" ? DOT_TIME : DASH_TIME)
+#define PLAY_SOUND(file) Beep(FREQUENCY, file == "sound/dot.mov" ? DOT_TIME : DASH_TIME)
 #define SLEEP(ms) Sleep(ms)
 #else
 #include <unistd.h>
-PLAY_SOUND(file) system("afplay " file)
+#define PLAY_SOUND(file) system("afplay " file)
 #define SLEEP(ms) usleep((ms) * 1000)
 #endif
 
@@ -52,5 +52,3 @@ int main() {
     }
     return 0;
 }
-
-// add
