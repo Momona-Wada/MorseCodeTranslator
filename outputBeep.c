@@ -8,6 +8,7 @@
 #define SLEEP(ms) Sleep(ms)
 #else
 #include <unistd.h>
+#include <stdlib.h>
 #define PLAY_SOUND(file) system("afplay " file)
 #define SLEEP(ms) usleep((ms) * 1000)
 #endif
