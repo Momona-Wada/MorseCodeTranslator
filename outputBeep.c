@@ -7,9 +7,11 @@
 
 #if defined(_WIN64)
 #include <windows.h>
+#define PLAY_SOUND(file) Beep(FREQUENCY, file == "dot.wav" ? DOT_TIME : DASH_TIME)
 #define SLEEP(ms) Sleep(ms)
 #else
 #include <unistd.h>
+PLAY_SOUND(file) system("afplay " file)
 #define SLEEP(ms) usleep((ms) * 1000)
 #endif
 
@@ -20,19 +22,11 @@
 #define FREQUENCY 700
 
 void dot() {
-#if defined(_WIN64)
-    Beep(FREQUENCY, DOT_TIME);
-#else
-    system("printf '\\a'");
-#endif
+    PLAY_SOUND("sound/dot.mov");
 }
 
 void dash() {
-#if defined(_WIN64)
-    Beep(FREQUENCY, DASH_TIME);
-#else
-    system("printf '\\a'");
-#endif
+    PLAY_SOUND("sound/dash.mov");
 }
 
 int main() {
@@ -58,3 +52,5 @@ int main() {
     }
     return 0;
 }
+
+// add
