@@ -10,7 +10,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #define PLAY_SOUND(file) system("afplay " file)
-#define SLEEP(ms) usleep((ms) * 100)
+#define SLEEP(ms) usleep((ms) * 500)
 #endif
 
 #define DOT_TIME 200 // ms
@@ -20,11 +20,11 @@
 #define FREQUENCY 700
 
 void dot() {
-    PLAY_SOUND("sound/dot.mov");
+    PLAY_SOUND("sound/dot.m4a");
 }
 
 void dash() {
-    PLAY_SOUND("sound/dash.mov");
+    PLAY_SOUND("sound/dash.m4a");
 }
 
 void outputBeep(const char text[]) {
