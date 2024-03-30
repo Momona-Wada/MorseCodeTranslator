@@ -10,7 +10,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #define PLAY_SOUND(file) system("afplay " file)
-#define SLEEP(ms) usleep((ms) * 1000)
+#define SLEEP(ms) usleep((ms) * 100)
 #endif
 
 #define DOT_TIME 200 // ms
@@ -27,8 +27,8 @@ void dash() {
     PLAY_SOUND("sound/dash.mov");
 }
 
-void outputBeep() {
-    char text[] = "101010001110001110111010111";
+void outputBeep(const char text[]) {
+//    char text[] = "101010001110001110111010111";
     int i = 0;
 
     while (text[i] != '\0') {
@@ -50,7 +50,7 @@ void outputBeep() {
     }
 }
 
-int main() {
-    outputBeep();
-    return 0;
-}
+//int main() {
+//    outputBeep();
+//    return 0;
+//}

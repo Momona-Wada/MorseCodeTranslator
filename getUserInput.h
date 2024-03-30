@@ -1,0 +1,10 @@
+//
+// Created by Atsuko Uemura on 2024/03/30.
+//
+
+#ifndef MORSECODETRANSLATOR_GETUSERINPUT_H
+#define MORSECODETRANSLATOR_GETUSERINPUT_H
+
+#endif //MORSECODETRANSLATOR_GETUSERINPUT_H
+
+char* getUserInput();

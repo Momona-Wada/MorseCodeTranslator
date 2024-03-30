@@ -7,8 +7,9 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
-    char input[256];
+
+char* getUserInput() {
+    static char input[256];
     printf("Enter your message: ");
     fgets(input, sizeof(input), stdin);
 
@@ -17,6 +18,5 @@ int main() {
         input[i] = toupper(input[i]);
     }
 
-    printf("Message: %s", input);
-    return 0;
+    return input;
 }

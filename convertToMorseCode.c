@@ -58,14 +58,14 @@ void storeMorseCode(const char* text, char* morseResult) {
     morseResult[index] = '\0';
 }
 
-int main() {
-    char text[] = "HELLO WORLD"; // text to convert
-    char morseResult[MAX_MORSE_LENGTH]; // pointer to store converted result
-
-    printf("The given text is:\n%s\n\n", text);
-
-    storeMorseCode(text, morseResult);
-    printf("The corresponding morse code is:\n%s", morseResult);
-    printf("\n");
-    return 0;
-}
+//int main() {
+//    char text[] = "HELLO WORLD"; // text to convert
+//    char morseResult[MAX_MORSE_LENGTH]; // pointer to store converted result
+//
+//    printf("The given text is:\n%s\n\n", text);
+//
+//    storeMorseCode(text, morseResult);
+//    printf("The corresponding morse code is:\n%s", morseResult);
+//    printf("\n");
+//    return 0;
+//}

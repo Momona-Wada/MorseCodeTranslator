@@ -23,6 +23,6 @@
 
 void dot();
 void dash();
-void outputBeep();
+void outputBeep(const char text[]);
 
 #endif //MORSECODETRANSLATOR_OUTPUTBEEP_H
