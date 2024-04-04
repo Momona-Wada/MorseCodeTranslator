@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/main.dir/getUserInput.c.o CMakeFiles/main.dir/convertToMorseCode.c.o CMakeFiles/main.dir/outputBeep.c.o CMakeFiles/main.dir/main.c.o -o main 
