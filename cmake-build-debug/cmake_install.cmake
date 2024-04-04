@@ -1,4 +1,4 @@
-# Install script for directory: /Users/atsukofujii/CLionProjects/MorseCodeTranslator
+# Install script for directory: /Users/yoshidont_mind/Desktop/CST term2/COMP 2510 Procedural Programming/MorseCodeTranslator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/atsukofujii/CLionProjects/MorseCodeTranslator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/yoshidont_mind/Desktop/CST term2/COMP 2510 Procedural Programming/MorseCodeTranslator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
