@@ -3,6 +3,7 @@
 // Created by Tatsuya Yoshida on 2024-03-21.
 //
 
+//#include <emscripten.h> // used for compilation to convertToMorseCode.js
 #include <stdio.h>
 #include <string.h>
 
@@ -57,6 +58,42 @@ void storeMorseCode(const char* text, char* morseResult) {
     // add '\0'
     morseResult[index] = '\0';
 }
+
+/**
+ * different version of conversion used for compilation to convertToMorseCode.js
+ */
+//EMSCRIPTEN_KEEPALIVE
+//char* convertToMorseCode(const char* text) {
+//    int index = 0;  // return
+//    int len = strlen(text);
+//    static char morseResult[MAX_MORSE_LENGTH];
+//
+//    for (int i = 0; i < len; i++) {
+//        const char* morseChar;
+//
+//        // retrieve next morse character
+//        if (text[i] != ' ') {
+//            morseChar = getMorseCode(text[i]);
+//        } else {
+//            morseChar = "0000000"; // add seven between
+//        }
+//
+//        // add morseChar
+//        while (*morseChar && index < MAX_MORSE_LENGTH - 1) {
+//            morseResult[index++] = *morseChar++;
+//        }
+//
+//        // add space between character
+//        if (text[i] != ' ' && index < MAX_MORSE_LENGTH - 4) {
+//            strcpy(&morseResult[index], "000");
+//            index += 3;
+//        }
+//    }
+//    // add '\0'
+//    morseResult[index] = '\0';
+//
+//    return morseResult;
+//}
 
 //int main() {
 //    char text[] = "HELLO WORLD"; // text to convert
