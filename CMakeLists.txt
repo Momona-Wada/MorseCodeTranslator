@@ -10,4 +10,5 @@ set(CMAKE_C_STANDARD 11)
 #)
 #add_executable(outputMorseCode outputMorseCode.c)
 #add_executable(outputBeep outputBeep.c)
-add_executable(main getUserInput.h getUserInput.c convertToMorseCode.h convertToMorseCode.c outputBeep.h outputBeep.c main.c)
+add_executable(main getUserInput.h getUserInput.c convertToMorseCode.h convertToMorseCode.c outputBeep.h outputBeep.c main.c
+        convertToMorseCodeForJS.c)
