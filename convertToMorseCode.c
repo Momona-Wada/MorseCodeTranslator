@@ -11,6 +11,7 @@
 
 // table for morse code
 const char* morseTable[36] = {
+        // index 0 - 25 are for alphabetical character
         "10111", "111010101", "11101011101", "1110101", "1", "101011101", "111011101",
         "1010101", "101", "1011101110111", "111010111", "101110101", "1110111", "11101",
         "11101110111", "10111011101", "1110111010111", "1011101", "10101", "111",
@@ -29,7 +30,7 @@ const char* getMorseCode(char c) {
     return ""; // return empty for characters not in the table
 }
 
-// convert given text into morse code
+// convert given text into morse code and store it in a pointer of char
 void storeMorseCode(const char* text, char* morseResult) {
     int index = 0;  // return
     int len = strlen(text);
