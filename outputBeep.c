@@ -10,7 +10,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #define PLAY_SOUND(file) system("afplay " file) // Use afplay command for sound on Unix-based OS
-#define SLEEP(ms) usleep((ms) * 1000) // Use usleep for delay, converting ms to microseconds
+#define SLEEP(ms) usleep((ms) * 1000) // Use usleep for delay, converting microseconds to miliseconds
 #endif
 
 #define DOT_TIME 100 // ms
